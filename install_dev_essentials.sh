@@ -9,6 +9,7 @@ sudo apt-get install -y \
   clang-tidy \
   cmake \
   cppcheck \
+  curl \
   distcc \
   doxygen \
   gdb \
@@ -31,6 +32,7 @@ sudo apt-get install -y \
   software-properties-common \
   tmux \
   tree \
-  xsel
+  xsel \
+  zsh
 
 

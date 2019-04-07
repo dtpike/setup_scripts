@@ -31,7 +31,7 @@ fi
 
 cat $(dirname $0)/Xresources > /tmp/Xresources.cc
 # Append colorscheme, default to default to the eighties
-curl https://raw.githubusercontent.com/chriskempson/base16-xresources/master/xresources/$BASE16_COLORSCHEME.Xresources >> /tmp/Xresources.cc
+# curl https://raw.githubusercontent.com/chriskempson/base16-xresources/master/xresources/$BASE16_COLORSCHEME.Xresources >> /tmp/Xresources.cc
 cpp /tmp/Xresources.cc > /home/$USER/.Xresources
 rm /tmp/Xresources.cc
 xrdb -load ~/.Xresources

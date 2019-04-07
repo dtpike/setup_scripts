@@ -36,4 +36,7 @@ cpp /tmp/Xresources.cc > /home/$USER/.Xresources
 rm /tmp/Xresources.cc
 xrdb -load ~/.Xresources
 
+# Change Ctrl + Alt + t to open rxvt shell
+gsettings set org.gnome.desktop.default-applications.terminal exec 'rxvt-unicode'
+
 echo "Setup successful, you may have to log back in for full changes to take effect"

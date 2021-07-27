@@ -1,4 +1,17 @@
 #!/bin/bash
-add-apt-repository -y ppa:jonathonf/vim
-apt-get update
-apt-get install -y vim-gnome
+
+sudo apt build-dep -y vim
+sudo apt install -y python-dev python3-dev
+git clone https://github.com/vim/vim.git
+cd vim/src
+./configure \
+	--enable-multibyte \
+	--enable-pythoninterp=yes \
+	--with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu/ \
+	--enable-python3interp=yes \
+	--with-python3-config-dir=/usr/lib/python3.8/config-3.8-x86_64-linux-gnu/ \
+	--enable-gui=gtk2 \
+	--enable-cscope \ 
+	--prefix=/usr/local/
+make
+sudo make install

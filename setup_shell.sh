@@ -2,12 +2,6 @@
 
 set -e
 
-BASE16_COLORSCHEME=${1:-base16-eighties-256}
-
-if [[ ! -a $(which cpp) ]]; then
-    echo "Error: Install cpp compiler first"
-    exit 1
-fi
 if [[ ! -a $(which curl) ]]; then
     echo "Error: Install curl first"
     exit 1
@@ -23,17 +17,8 @@ if [ ! -f ~/.fonts/Meslo\ LG\ M\ Regular\ for\ Powerline.ttf ]; then
   fc-cache -vf ~/.fonts/
 fi
 
-# Example of copying perl script to copy selection to clipboard
-# sudo cp ${base}/xkr-clipboard.pl /usr/lib/urxvt/perl/xkr-clipboard
-
-# At some point I was having trouble with .Xresources on Ubuntu 16.04. Creating link to .Xdefaults-<hostname worked
-# cd ~; ln -s ~/.Xresources .Xdefaults-$(hostname)
-
-cat $(dirname $0)/Xresources > /tmp/Xresources.cc
-# Append colorscheme, default to default to the eighties
-# curl https://raw.githubusercontent.com/chriskempson/base16-xresources/master/xresources/$BASE16_COLORSCHEME.Xresources >> /tmp/Xresources.cc
-cpp /tmp/Xresources.cc > /home/$USER/.Xresources
-rm /tmp/Xresources.cc
+cd /home/$USER
+ln -s $(dirname $0)/Xresources .Xresources
 xrdb -load ~/.Xresources
 
 # Change Ctrl + Alt + t to open rxvt shell

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo apt build-dep -y vim
-sudo apt install -y python-dev python3-dev
+apt build-dep -y vim
+apt install -y python-dev python3-dev
 git clone https://github.com/vim/vim.git
 cd vim/src
 ./configure \
@@ -14,4 +14,4 @@ cd vim/src
 	--enable-cscope \ 
 	--prefix=/usr/local/
 make
-sudo make install
+make install

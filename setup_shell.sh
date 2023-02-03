@@ -8,7 +8,7 @@ if [[ ! -a $(which curl) ]]; then
 fi
 
 # Install rxvt unicode shell with 256 color support
-sudo apt install rxvt-unicode-256color -y
+sudo apt install rxvt-unicode -y
 
 # Get font
 if [ ! -f ~/.fonts/Meslo\ LG\ M\ Regular\ for\ Powerline.ttf ]; then

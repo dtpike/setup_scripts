@@ -21,7 +21,9 @@ dpkg-reconfigure keyboard-configuration
 
 ./install_nvim.sh
 
+# Setup zsh
 sudo apt install -y zsh
+chsh -s $(which zsh)
 
 
 
